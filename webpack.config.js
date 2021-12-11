@@ -1,5 +1,7 @@
-const path = require("path");
-const HtmlWebpackPlugin = requiere("html-webpack-plugin")
+
+const path = require('path');
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -7,13 +9,14 @@ module.exports = {
         filename: "bundle.js",
 
     },
+    mode:"development",
     resolve: {
         "extensions": [".js", ".jsx"],
     },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$|jsx/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
