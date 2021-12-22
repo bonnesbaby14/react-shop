@@ -1,5 +1,10 @@
 import React from "react";
-import  ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 import App from "./components/App";
+import Layout from "./containers/Layout";
+import Login from "./containers/Login";
 
-ReactDOM.render(<App/>,document.getElementById("root"));
+ReactDOM.render(<Layout>
+    <Login/>
+
+</Layout>, document.getElementById("root"));
