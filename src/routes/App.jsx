@@ -13,9 +13,15 @@ import Orders from '../pages/Orders';
 import NotFound from "../pages/NotFoud"
 import '../styles/global.scss';
 
+import AppContext from '../context/AppContext';
+import useInitialState from "../hooks/useInitialState"
+
+
 const App = () => {
+    const initialState=useInitialState();
     return (
-        <BrowserRouter>
+       <AppContext.Provider  value={initialState}>
+            <BrowserRouter>
             <Layout>
                 <Routes>
                 
@@ -35,6 +41,7 @@ const App = () => {
             </Layout>
 
         </BrowserRouter>
+       </AppContext.Provider>
     );
 }
 
